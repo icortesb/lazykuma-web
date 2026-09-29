@@ -1,0 +1,8 @@
+{
+  "label": "Without the TUI",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Commands that run with the terminal UI closed: a watch that reports outages, the switch that starts it at login, and a one-shot status for scripts and status bars."
+  }
+}
