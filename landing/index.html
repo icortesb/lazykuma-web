@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>lazykuma — Uptime Kuma, in the terminal</title>
+<meta name="description" content="A terminal UI for Uptime Kuma 2. Watch every monitor of every instance you run, live; manage monitors, groups, tags, status pages and the server; get outage alerts with the terminal closed.">
+<meta property="og:title" content="lazykuma — Uptime Kuma, in the terminal">
+<meta property="og:description" content="A terminal UI for Uptime Kuma 2. Watch every monitor of every instance you run, live; manage monitors, groups, tags, status pages and the server; get outage alerts with the terminal closed.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/demo.gif">
+<meta name="theme-color" content="#1a1b26">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="assets/favicon.ico">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="canonical" href="https://icortesb.github.io/lazykuma-web/">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "lazykuma",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Linux, macOS, Windows",
+  "description": "A terminal UI for Uptime Kuma 2. Watch every monitor of every instance you run, live, and pause or resume them without opening the browser. Manage monitors, groups, tags, notification channels, status pages, API keys, proxies and Docker hosts; get desktop alerts in the background and a status line for waybar.",
+  "url": "https://icortesb.github.io/lazykuma-web/",
+  "downloadUrl": "https://github.com/icortesb/lazykuma/releases",
+  "softwareVersion": "0.7.0",
+  "codeRepository": "https://github.com/icortesb/lazykuma",
+  "softwareHelp": "https://icortesb.github.io/lazykuma-web/docs/",
+  "license": "https://github.com/icortesb/lazykuma/blob/main/LICENSE",
+  "programmingLanguage": "Go",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="noise" aria-hidden="true"></div>
+
+<header class="nav">
+  <a class="nav__brand" href="#top">
+    <span class="nav__prompt">$</span> lazykuma
+  </a>
+  <nav class="nav__links">
+    <a href="docs/">Docs</a>
+    <a href="https://github.com/icortesb/lazykuma/releases">Releases</a>
+    <a href="https://github.com/icortesb/lazykuma">GitHub</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <p class="hero__kicker">for Uptime Kuma 2, in the terminal</p>
+    <h1 class="hero__title">
+      Uptime Kuma,<br>
+      <span class="hero__gradient">in the terminal.</span>
+    </h1>
+    <p class="hero__lede">
+      Watch every monitor of every instance you run, live. Pause, edit and
+      silence them, arrange status pages, manage the server — and hear about
+      outages with the terminal closed. One keyboard, no browser tab.
+    </p>
+
+    <div class="install" role="group" aria-label="Install command">
+      <div class="install__scroll">
+        <span class="install__prompt">$</span>
+        <code id="install-cmd">go install github.com/icortesb/lazykuma/cmd/lazykuma@latest</code>
+      </div>
+      <button class="install__copy" id="copy-btn" type="button" aria-label="Copy install command">copy</button>
+    </div>
+
+    <div class="hero__ctas">
+      <a class="btn btn--primary" href="docs/getting-started/installation">Get started</a>
+      <a class="btn btn--ghost" href="#install">Download a binary</a>
+      <a class="btn btn--ghost" href="https://github.com/icortesb/lazykuma">View on GitHub</a>
+    </div>
+  </section>
+
+  <section class="demo">
+    <div class="terminal">
+      <div class="terminal__bar">
+        <span class="dot dot--red"></span>
+        <span class="dot dot--yellow"></span>
+        <span class="dot dot--green"></span>
+        <span class="terminal__title">lazykuma</span>
+      </div>
+      <img class="terminal__gif" src="assets/demo.gif" alt="Recording of lazykuma: the menu, an instance with groups and tags, a monitor's ping chart, and its status pages." width="1140" height="560" loading="eager">
+    </div>
+  </section>
+
+  <section class="features">
+    <h2 class="section-title">Everything Kuma does, from the keyboard</h2>
+    <div class="grid">
+      <article class="card">
+        <p class="card__tag">menu</p>
+        <h3>Every instance</h3>
+        <p>Home, VPS, lab: one menu, each with its monitors live, and a footer that says which answer — <code>home ok vps down</code>. Log in once, 2FA included.</p>
+      </article>
+      <article class="card">
+        <p class="card__tag">g · t · /</p>
+        <h3>Groups &amp; tags</h3>
+        <p>Kuma's own groups and tags, made and used from here. Fold groups, move monitors, search names, targets and tags, show only what is down.</p>
+      </article>
+      <article class="card">
+        <p class="card__tag">enter</p>
+        <h3>History charts</h3>
+        <p>Uptime over a day, 30 days and a year, the certificate, a ping chart from the last hour to 30 days, and every state change.</p>
+      </article>
+      <article class="card">
+        <p class="card__tag">S</p>
+        <h3>Status pages</h3>
+        <p>Create a page, arrange its sections and monitors, set its theme and domains, post an incident, open it in the browser.</p>
+      </article>
+      <article class="card">
+        <p class="card__tag">A</p>
+        <h3>Server admin</h3>
+        <p>API keys for Prometheus and Grafana, proxies, Docker hosts with a connection test, and the database: size, shrink, clear statistics.</p>
+      </article>
+      <article class="card">
+        <p class="card__tag">n · c · m</p>
+        <h3>Monitors &amp; channels</h3>
+        <p>Forms for HTTP, keyword, ping and port; a field editor for every other type. Telegram, webhook and email channels, with a test. Silence while you deploy.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="alerts">
+    <h2 class="section-title">Alerts with the terminal closed</h2>
+    <p class="alerts__lede">
+      The same binary runs without the interface. A watch that reports every
+      outage as a desktop notification, started at login; and a one-shot
+      status for scripts and status bars.
+    </p>
+    <div class="alerts__grid">
+      <div class="alerts__item">
+        <h3>Background alerts</h3>
+        <p>systemd, XDG autostart, launchd or the Windows Run key — no admin rights. A Kuma restart is not an outage.</p>
+        <pre><code><span class="out-dim">$</span> lazykuma autostart on
+background alerts: on (systemd user service)
+runs: /home/you/.local/bin/lazykuma
+watch: running (pid 4182)</code></pre>
+      </div>
+      <div class="alerts__item">
+        <h3>waybar</h3>
+        <p>Exit codes a script can read; JSON a status bar can colour.</p>
+        <pre><code>"custom/kuma": {
+  "exec": "lazykuma status --json",
+  "return-type": "json",
+  "interval": 60
+}</code></pre>
+      </div>
+    </div>
+    <a class="keys__more" href="docs/without-the-tui/background-alerts">How background alerts work →</a>
+  </section>
+
+  <section class="keys">
+    <h2 class="section-title">Keys that stay put</h2>
+    <p class="keys__lede">The footer of every screen says its keys. The same letter does the same thing on a monitor in the list and on its detail.</p>
+    <div class="keycap-row">
+      <span class="keycap">j</span><span class="keycap">k</span>
+      <span class="keycap-label">move</span>
+    </div>
+    <div class="keycap-row">
+      <span class="keycap">p</span>
+      <span class="keycap-label">pause or resume a monitor, or a whole group</span>
+    </div>
+    <div class="keycap-row">
+      <span class="keycap">m</span>
+      <span class="keycap-label">silence it while you deploy</span>
+    </div>
+    <div class="keycap-row">
+      <span class="keycap">/</span>
+      <span class="keycap-label">search names, targets and tags</span>
+    </div>
+    <div class="keycap-row">
+      <span class="keycap">?</span>
+      <span class="keycap-label">help, right there in the app</span>
+    </div>
+    <a class="keys__more" href="docs/usage/keys">Full key reference →</a>
+  </section>
+
+  <section class="install-full" id="install">
+    <h2 class="section-title">Install</h2>
+    <div class="install-list">
+      <div class="install-option">
+        <h3>Linux</h3>
+        <pre><code>curl -fsSL https://github.com/icortesb/lazykuma/releases/download/v0.7.0/lazykuma_0.7.0_linux_amd64.tar.gz | tar -xzf - lazykuma &amp;&amp; mkdir -p ~/.local/bin &amp;&amp; mv lazykuma ~/.local/bin/</code></pre>
+      </div>
+      <div class="install-option">
+        <h3>macOS</h3>
+        <pre><code>curl -fsSL https://github.com/icortesb/lazykuma/releases/download/v0.7.0/lazykuma_0.7.0_darwin_arm64.tar.gz | tar -xzf - lazykuma &amp;&amp; sudo mv lazykuma /usr/local/bin/</code></pre>
+      </div>
+      <div class="install-option">
+        <h3>Windows</h3>
+        <pre><code>Invoke-WebRequest https://github.com/icortesb/lazykuma/releases/download/v0.7.0/lazykuma_0.7.0_windows_amd64.zip -OutFile lazykuma.zip; Expand-Archive lazykuma.zip -DestinationPath lazykuma</code></pre>
+      </div>
+      <div class="install-option">
+        <h3>Go</h3>
+        <pre><code>go install github.com/icortesb/lazykuma/cmd/lazykuma@latest</code></pre>
+      </div>
+      <div class="install-option">
+        <h3>Other</h3>
+        <p>arm64 Linux, Intel Macs and ARM Windows: take the build for your system from <a href="https://github.com/icortesb/lazykuma/releases">releases</a>, with checksums. <a href="docs/getting-started/installation">Details →</a></p>
+      </div>
+    </div>
+    <p class="install-req">Requires Uptime Kuma 2.x. One static binary, no runtime dependencies. <a href="docs/getting-started/first-run">First run →</a></p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__row">
+    <span>MIT licensed.</span>
+    <div class="footer__links">
+      <a href="docs/">Docs</a>
+      <a href="https://github.com/icortesb/lazykuma">GitHub</a>
+      <a href="https://github.com/icortesb/lazykuma/releases">Releases</a>
+      <a href="https://github.com/icortesb/lazykuma/issues">Issues</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
