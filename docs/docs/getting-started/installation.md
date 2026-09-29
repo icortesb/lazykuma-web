@@ -26,7 +26,7 @@ instead. `~/.local/bin` must be on your `PATH`; most distributions put it there 
 
 ```sh
 curl -fsSL https://github.com/icortesb/lazykuma/releases/download/v0.7.0/lazykuma_0.7.0_darwin_arm64.tar.gz | tar -xzf - lazykuma
-sudo mv lazykuma /usr/local/bin/
+sudo mkdir -p /usr/local/bin && sudo mv lazykuma /usr/local/bin/
 ```
 
 `darwin_arm64` is for Apple silicon, `darwin_amd64` for Intel Macs. The binary is not signed:
@@ -47,6 +47,9 @@ Move `lazykuma.exe` to a folder on your `PATH` to run it from anywhere. `windows
 for ARM machines.
 
 ## With Go
+
+Needs Go 1.27 or newer. An older toolchain (1.21 or later) fetches 1.27 by itself, unless
+`GOTOOLCHAIN=local` is set.
 
 ```sh
 go install github.com/icortesb/lazykuma/cmd/lazykuma@latest
@@ -90,5 +93,5 @@ lazykuma --version
 ## Upgrading
 
 Replace the binary with the new one. If [background alerts](/without-the-tui/background-alerts)
-are on and the binary moved, run `lazykuma autostart on` again so the login entry points at
-the new path.
+are on, after upgrading run `lazykuma autostart on` so the background watch restarts on the new
+binary (and the login entry points at its path, if it moved).

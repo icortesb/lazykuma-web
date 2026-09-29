@@ -8,8 +8,9 @@ sidebar_position: 1
 lazykuma watch
 ```
 
-Runs until stopped and reports every outage: one line per change on standard output, and a
-desktop notification — D-Bus on Linux, Notification Center on macOS, toasts on Windows.
+Runs until stopped and reports every outage: one line per outage, and per connection change, on
+standard output, and a desktop notification — D-Bus on Linux, Notification Center on macOS,
+toasts on Windows. Recoveries are reported too only with `on = "changes"` (see below).
 
 ```
 2026-09-28 14:02:11  watching home, vps; notifying on outages

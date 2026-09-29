@@ -32,8 +32,8 @@ A wrong username, password or code says so and lets you try again.
 
 ## The menu
 
-Each instance is a line of the menu. Under it: its address, how many monitors it has and how
-many are down — or, when it is not connected, why. The footer sums them all up in one line:
+Each instance is a line of the menu. Under the selected one: its address, how many monitors it
+has and how many are down — or, when it is not connected, why. The footer sums them all up in one line:
 
 ```
 home ok   vps down   lab no cred
@@ -54,8 +54,8 @@ home ok   vps down   lab no cred
 ## Renaming or removing an instance
 
 There is no menu entry for it yet: edit `config.toml` directly. Renaming an instance, or
-changing its URL, means logging in again, because the stored token is tied to the URL it was
-issued for, not the name.
+changing its URL, means logging in again: tokens are stored by instance name and used only for the URL they were issued for, so a
+renamed instance has no token under its new name, and a changed URL does not honour the old one.
 
 ## Next
 

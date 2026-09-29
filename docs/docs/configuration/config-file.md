@@ -39,7 +39,8 @@ One block per Kuma, in the order the menu lists them.
 | `url` | the address you open Kuma at, `http://` or `https://` |
 
 To remove an instance, delete its block. To rename one, or change its URL, edit it and log in
-again: the stored token is tied to the URL it was issued for, not the name.
+again: tokens are stored by instance name and used only for the URL they were issued for, so a
+renamed instance has no token under its new name, and a changed URL does not honour the old one.
 
 `lazykuma watch` picks up changes to the file within ten seconds, without a restart.
 

@@ -23,7 +23,8 @@ The instances and the notification settings. No secrets: safe to keep in your do
 ## tokens.json
 
 The login token of each instance, readable only by you (on Windows, kept in your user profile
-folder, which other users cannot read). Tokens are keyed by the URL they were issued for.
+folder, which other users cannot read). Each token is stored under the
+instance's name, with the URL it was issued for, and is only used for that URL.
 
 Your password and 2FA code are sent to Kuma once, at login, and never written anywhere. When
 Kuma refuses a token — it expired, or you changed your password — the instance says `bad cred`

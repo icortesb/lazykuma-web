@@ -10,8 +10,8 @@ The menu is where lazykuma starts: the **LAZYKUMA** logo, one line per instance,
 **Add instance**, **Background alerts**, **Help** and **Quit**. `↑`/`k` and `↓`/`j` move,
 `enter` chooses.
 
-Under each instance is its address and how many monitors it has, and how many are down — or,
-when it is not connected, why. The footer sums up every instance at once:
+Under the selected instance is its address, how many monitors it has and how many are down —
+or, when it is not connected, why. The footer sums up every instance at once:
 
 ```
 home ok   vps down   lab no cred
