@@ -24,8 +24,12 @@ cd landing
 python3 -m http.server 8000
 ```
 
-The install commands on the landing page and in `docs/docs/getting-started/installation.md`
-name a release (`v0.7.0`); bump them with each lazykuma release.
+Each lazykuma release, bump the version named in:
+
+- the install commands in `landing/index.html` and `docs/docs/getting-started/installation.md`
+  (`v0.7.0`, `lazykuma_0.7.0_…`)
+- `softwareVersion` in the JSON-LD block of `landing/index.html`
+- `docs/docs/changelog.md`, with the new release's notes
 
 ## Building
 
