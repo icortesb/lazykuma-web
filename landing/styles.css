@@ -367,26 +367,29 @@ main { position: relative; z-index: 1; }
 }
 .install-option pre:hover,
 .install-option pre:focus-visible { border-color: var(--accent); }
-.install-option pre::after {
+/* The copy hint sits by the label, outside the scrolling command, so it
+   never covers the command text, whatever the width. */
+.install-option h3::after {
   content: 'click to copy';
-  position: absolute;
-  top: 0.5rem;
-  right: 0.75rem;
+  display: block;
+  margin-top: 0.2rem;
   font-size: 0.7rem;
-  font-family: var(--sans);
+  font-weight: 400;
   color: var(--muted);
   opacity: 0;
   transition: opacity 0.15s;
 }
-.install-option pre:hover::after,
-.install-option pre:focus-visible::after { opacity: 1; }
-.install-option pre.copied::after { content: 'copied!'; color: var(--ok); opacity: 1; }
+.install-option:not(:has(pre)) h3::after { content: none; }
+.install-option:has(pre:hover) h3::after,
+.install-option:has(pre:focus-visible) h3::after { opacity: 1; }
+.install-option:has(pre.copied) h3::after { content: 'copied!'; color: var(--ok); opacity: 1; }
 .install-option p { flex: 1 1 auto; margin: 0; font-size: 0.9rem; color: var(--muted); }
 .install-req { color: var(--muted); font-size: 0.9rem; }
 
 @media (max-width: 640px) {
   .install-option { flex-direction: column; align-items: flex-start; gap: 0.6rem; }
-  .install-option h3 { flex: none; }
+  .install-option h3 { flex: none; display: flex; align-items: baseline; gap: 0.6rem; }
+  .install-option h3::after { margin-top: 0; }
   .install-option pre { width: 100%; }
 }
 

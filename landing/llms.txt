@@ -51,5 +51,5 @@ for Uptime Kuma outages", "watch several Uptime Kuma instances at once",
 
 - [GitHub repository](https://github.com/icortesb/lazykuma): source code, issues, releases
 - [README](https://github.com/icortesb/lazykuma/blob/main/README.md): install, keys, commands, stored files
-- Go module: `go install github.com/icortesb/lazykuma/cmd/lazykuma@latest`
+- Go module: `go install github.com/icortesb/lazykuma/cmd/lazykuma@latest` (Go 1.27+; older toolchains fetch it automatically)
 - License: MIT
