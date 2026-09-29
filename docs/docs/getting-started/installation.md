@@ -8,14 +8,15 @@ lazykuma is one static binary with no runtime dependencies. Builds for Linux, ma
 Windows, on amd64 and arm64, are attached to every
 [release](https://github.com/icortesb/lazykuma/releases).
 
-The archives are named `lazykuma_<version>_<system>_<arch>`: a `.tar.gz` for Linux and macOS,
-a `.zip` for Windows. Each holds the binary, `LICENSE` and `README.md`. The commands below take
-v0.7.0; swap the version for a newer one from the releases page.
+The archives are named `lazykuma_<system>_<arch>`: a `.tar.gz` for Linux and macOS, a `.zip`
+for Windows. Each holds the binary, `LICENSE` and `README.md`. The commands below always fetch
+the latest release (`releases/latest/download/…`); for an older one, pick it from the releases
+page. Releases before v0.7.1 carry the version in the name: `lazykuma_0.7.0_linux_amd64.tar.gz`.
 
 ## Linux
 
 ```sh
-curl -fsSL https://github.com/icortesb/lazykuma/releases/download/v0.7.0/lazykuma_0.7.0_linux_amd64.tar.gz | tar -xzf - lazykuma
+curl -fsSL https://github.com/icortesb/lazykuma/releases/latest/download/lazykuma_linux_amd64.tar.gz | tar -xzf - lazykuma
 mkdir -p ~/.local/bin && mv lazykuma ~/.local/bin/
 ```
 
@@ -25,7 +26,7 @@ instead. `~/.local/bin` must be on your `PATH`; most distributions put it there 
 ## macOS
 
 ```sh
-curl -fsSL https://github.com/icortesb/lazykuma/releases/download/v0.7.0/lazykuma_0.7.0_darwin_arm64.tar.gz | tar -xzf - lazykuma
+curl -fsSL https://github.com/icortesb/lazykuma/releases/latest/download/lazykuma_darwin_arm64.tar.gz | tar -xzf - lazykuma
 sudo mkdir -p /usr/local/bin && sudo mv lazykuma /usr/local/bin/
 ```
 
@@ -38,7 +39,7 @@ quarantine flag with `xattr -d com.apple.quarantine lazykuma`.
 In PowerShell:
 
 ```powershell
-Invoke-WebRequest https://github.com/icortesb/lazykuma/releases/download/v0.7.0/lazykuma_0.7.0_windows_amd64.zip -OutFile lazykuma.zip
+Invoke-WebRequest https://github.com/icortesb/lazykuma/releases/latest/download/lazykuma_windows_amd64.zip -OutFile lazykuma.zip
 Expand-Archive lazykuma.zip -DestinationPath lazykuma
 .\lazykuma\lazykuma.exe
 ```
@@ -78,8 +79,8 @@ Every release carries a `checksums.txt` with the SHA-256 of each archive. To che
 before unpacking it, download it and the checksums into the same folder:
 
 ```sh
-curl -fsSLO https://github.com/icortesb/lazykuma/releases/download/v0.7.0/lazykuma_0.7.0_linux_amd64.tar.gz
-curl -fsSLO https://github.com/icortesb/lazykuma/releases/download/v0.7.0/checksums.txt
+curl -fsSLO https://github.com/icortesb/lazykuma/releases/latest/download/lazykuma_linux_amd64.tar.gz
+curl -fsSLO https://github.com/icortesb/lazykuma/releases/latest/download/checksums.txt
 sha256sum --ignore-missing -c checksums.txt
 ```
 

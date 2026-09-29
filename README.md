@@ -24,10 +24,9 @@ cd landing
 python3 -m http.server 8000
 ```
 
-Each lazykuma release, bump the version named in:
+The install commands use `releases/latest/download/…`, so they never change. Each lazykuma
+release, bump:
 
-- the install commands in `landing/index.html` and `docs/docs/getting-started/installation.md`
-  (`v0.7.0`, `lazykuma_0.7.0_…`)
 - `softwareVersion` in the JSON-LD block of `landing/index.html`
 - `docs/docs/changelog.md`, with the new release's notes
 

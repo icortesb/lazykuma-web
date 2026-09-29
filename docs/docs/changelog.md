@@ -7,6 +7,12 @@ sidebar_position: 7
 Every release has builds for Linux, macOS and Windows on amd64 and arm64, and a
 `checksums.txt`, on [GitHub Releases](https://github.com/icortesb/lazykuma/releases).
 
+## v0.7.1 — 2026-09-29
+
+The README opens with the demo and links to this site. Release archives no longer carry the
+version in their names (`lazykuma_linux_amd64.tar.gz`), so
+`https://github.com/icortesb/lazykuma/releases/latest/download/<name>` always fetches the latest.
+
 ## v0.7.0 — 2026-09-29
 
 **Background alerts that start at login.** `lazykuma autostart on|off` registers
